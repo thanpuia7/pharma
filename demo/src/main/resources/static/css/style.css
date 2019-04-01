@@ -1,0 +1,564 @@
+@charset "utf-8";
+
+/*CSS Document */
+
+body{
+	margin: 0;
+	padding: 0;
+
+}
+
+.banner{
+	background: url(../images/slider-6.png) no-repeat center;
+	background-size: cover;
+	height: 100vh;
+	position: relative;
+	
+}
+
+header{
+	padding: 5px 30px 0px;
+	background-color: rgba(255,255,255,0.6);
+	
+}
+
+.hat{
+	float: left;
+	display: inline-block;
+
+}
+
+.title-color{
+	text-transform:uppercase;
+	color: #ff4181;
+	
+}
+
+.search_my{
+	float: right;
+	border: 3px #000 solid;
+	
+}
+
+.search1{
+	border: none;
+	background-color: none;
+	width: 150px;
+	background-color: transparent;
+}
+.button1{
+	color: #fff;
+	background-color: #000;
+	border: none;
+	height: 40px;
+	width: 40px;
+	
+}
+
+.nav1{
+	background-color: #f8f9fa;
+}
+
+.navbar{
+	padding: 0px;
+}
+
+.navbar-nav li{
+	z-index: 1;
+	
+}
+.navbar-nav li a{
+	font-size: 17px;
+	padding: 15px 60px !important;
+	
+}
+
+.navbar-nav li a:hover{
+	border-right: 3px solid #ff4f81;
+	border-left: 3px solid #ff4f81;
+	transition: 0.5s all;
+}
+
+.navbar-light .navbar-nav .nav-link{
+	
+	color: #000;
+	
+	
+}
+
+
+
+.more-bttn{
+	font-size: 14px;
+	color: #fff;
+	font-weight: 600;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	background: #e73691;
+	padding: 10px 22px;
+	border: 2px solid #010000;
+	
+}
+
+
+.about{
+	margin-top: 80px;
+	text-align: center;
+}
+.about h1 h3 p{
+	text-align: center;
+	
+}
+.about h1{
+	letter-spacing: 12px;
+	margin-bottom: 15px;
+	font-size: 25px;
+	
+}
+.about h3{
+	 color: #ff4f81;
+}
+.about p{
+	padding: 10px 137px 0px;
+}
+
+.crl1{
+	background: #146eb4;
+}
+
+.crl2{
+	background: #2dde98;
+}
+
+.crl3{
+	background: #8e43e7;
+}
+
+.crl4{
+	background: #47ae28;
+}
+
+.crl5{
+	background: #d2b91a;
+}
+
+.crl6{
+	background: #8e43e7;
+}
+
+
+
+
+.about_grid{
+	text-align: center;
+	padding: 30px;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	
+}
+
+.about_grid p{
+	padding: 0px;
+	color: #fff;
+	
+	text-align: center;
+}
+
+
+.about_grid i{
+	font-size: 50px;
+	color; #fff;
+	margin-bottom: 10px;
+	
+}
+.about_grid i:hover{
+	color: #000;
+}
+
+.about_grid i:hover{
+	box-shadow: 2px 15px 70px 2px rgba(0,0,0,0.75);
+	-webkit-box-shadow: 2px 15px 70px 2px rgba(0,0,0,0.75);
+	-moz-box-shadow: 2px 15p 70px 2px rgba(0,0,0,0.75);
+}
+
+
+
+
+
+.services{
+	background-color: #000;
+	margin-top: 40px;
+	padding-bottom: 40px;
+	
+}
+
+.services h1{
+	color:#fff;
+	text-align: center;
+	letter-spacing: 12px;
+	text-transform: uppercase;
+	padding: 80px 0px 20px;
+}
+
+.services h3{
+	color: #ff4f81;
+	margin-bottom: 20px;
+}
+
+.services p{
+	color: #fff;
+	padding: 10px 137px 0px;
+	
+}
+
+.services .about_grid{
+	
+	border: 5px solid #effffc;
+	
+}
+.services .about_grid p{
+	padding: 0px;
+	color: #fff;
+	
+	text-align: center;
+}
+
+.services .about_grid i{
+	font-size: 50px;
+	color; #fff;
+	margin-bottom: 10px;
+	
+}
+.services .about_grid .more-bttn:hover{
+	color: #000;
+}
+
+.about_grid .more-bttn:hover{
+	box-shadow: 2px 15px 70px 2px rgba(0,0,0,0.75);
+	-webkit-box-shadow: 2px 15px 70px 2px rgba(0,0,0,0.75);
+	-moz-box-shadow: 2px 15p 70px 2px rgba(0,0,0,0.75);
+}
+
+
+
+.services_grid{
+	background-color: aliceblue;
+	text-align: center;
+	padding: 20px;
+	margin-bottom: 20px;
+}
+.services_grid1{
+	padding:20px 15px;
+	width: 100%;
+	text-align: center;
+	
+}
+
+.services_grid1 i{
+	font-size: 26px;
+	color: #ff4f81;
+	text-align: center;'
+	line-height: 63px;
+	height: 64px;
+	border-radius: 164px;
+}
+.services_grid2{
+	padding: 20px 15px;
+	
+}
+
+.services_grid2 p{
+	color: #000;
+	padding: 0px;
+	margin-bottom: auto;
+	
+	
+}
+
+.services_grid2 i{
+	color: #ff4f81;
+	margin-right: 10px;
+	font-size: 25px;
+}
+
+.services_grid_right{
+	border-right: 2px solid #ff4f81;
+	text-align: center;
+	
+}
+ 
+ 
+
+.more_details{
+	color: #ff322f;
+	text-decoration:none;
+	font-size: 14px;
+	margin-top: 25px;
+	text-align: center;
+	display: inline-block;
+	transition: 0.6s all;
+	-webkit-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+	border: 1px solid #000;
+	padding: 8px 24px;
+	border-radius: 20px;
+	letter-spacing: 2px;
+	background-clip: white;
+	
+}
+
+.more_details:hover{
+	color: #000;
+	
+	background-color: #eb5b7e;
+	border-color: #ff2b67;
+	transition: 0.5s all;
+	
+	-webkit-transition: 2s all;
+	-o-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+	
+}
+
+
+
+
+
+
+.gallery .col-lg-4 .card-small{
+	padding: 20px 20px;
+	border: 40px solid white;
+}
+
+
+
+.gallery .card-small{
+	width: 400px;
+}
+
+.gallery .col-lg-4 .card-small img{
+	
+	border-radius: 50%;
+}
+
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+.gallery .card-small button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.gallery .col-lg-4 .card-small a {
+  text-decoration: none;
+  font-size: 22px;
+  color: #5266b5;
+}
+
+.gallery .col-lg-4 .card-small button:hover, a:hover {
+  opacity: 0.7;
+}
+
+
+
+
+
+
+
+
+
+
+#myBtn {
+  
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: red; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+
+#myBtn i:hover {
+  background-color: #030802; /* Add a dark-grey background on hover */
+}
+
+
+.inform{
+	background: url(../images/contact.jpg) 0px 0px fixed;
+	background-size: cover;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	color: #fff;
+}
+
+.inform h1{
+	color: #ff4a4e;
+	letter-spacing: 10px;
+	text-align: center;
+}
+
+
+.inform_form{
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.form-left{
+	padding-left: 0;
+}
+
+.inform input[type="text"], input[type="email"]{
+	width:100%;
+	color: #fdbbff;
+	background: none;
+	outline: none;
+	font-size: 1em;
+	padding: 0.8em 1em;
+	margin-bottom: 2em;
+	border: none;
+	border-bottom: solid 2px #fff;
+	display: inline_block;
+	transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	
+}
+
+.inform textarea{
+	resize: none;
+	width:100%;
+	color: #fff;
+	background: none;
+	outline: none;
+	font-size: 1em;
+	padding: 0.8em 1em;
+	min-height: 10em;
+	border: none;
+	border-bottom: solid 2px #fff;
+	display: inline_block;
+	transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	
+}
+
+.inform input[type="submit"]{
+	outline: none;
+	color: #fff;
+	padding: 0.7em 1em;
+	font-size: 14px;
+	margin: 1em 0 0 0;
+	border: 1px solid #fff;
+	background: #ff4f81;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+	-o-transition: 0.5s all;
+}
+
+.inform input[type="submit"]:hover{
+	background: none;
+	color: #fff;
+	border: 1px solid #fff;
+	
+}
+
+
+.inform input[type="text"]:hover, .inform input[text="text"]:focus, .inform input[type="email"]:hover, .inform input[type="email"]:focus, .inform textarea:hover, .inform textarea:focus{
+	border-color: #ff4f81;
+} 
+
+
+
+@media(max-width: 1200px){
+	.nav1 .navbar-nav li{
+	font-size: 15px;
+	
+	}
+		
+}
+
+@media(max-width: 992px){
+	.nav1 .navbar-toggler{
+	margin: 10px 0px 10px 30px;
+	background-color: #ff4f81;
+		 
+	}
+	
+	.nav1 .navbar-toggler:hover .navbar-toggler:focus{
+	background-color: #fff;
+	border-color: #F0E68C;
+	}
+	
+	.nav1 .navbar-light{
+	backbround-color: #fff;
+	
+	}
+	
+	.nav1 .navbar-nav li a{
+	text-align: center;
+	background-color: aliceblue;
+	
+	}
+	
+	.nav1 .navbar-nav li a:hover{
+	background-color: #ff4f81;
+	}
+	
+}
+
+@media(max-width:768px){
+	.about p{
+		padding: 10px 10px 0px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

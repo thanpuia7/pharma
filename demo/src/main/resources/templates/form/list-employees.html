@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+   <!-- Bootstrap -->
+	
+ <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+     <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    <script th:src="@{/js/jquery.js}"></script>
+    <script th:src="@{/js/bootstrap.js}"></script>
+    <script type="text/javascript" th:src="@{/js/main.js}"  src="/js/main.js"></script>
+    
+	<title>Employee Directory</title>
+</head>
+
+<body>
+
+
+<nav class="navbar navbar-default">
+<div class="container">
+<div class="nav-header">
+	<div class="navbar-brand">Employee Information</div>
+</div>
+	<ul class="nav navbar-nav">
+	<li> <a href="#">Home</a></li>
+	<li><a href=" ">About</a></li>
+	<li><a href=" ">FAQ </a></li>
+	</ul>
+</div>
+	</nav>
+
+<div class="container">
+<div>
+	<h3>Employee Directory</h3>
+	<hr>
+	
+	<!-- Add a button -->
+	<a th:href="@{/employees/showFormForAdd}"
+		class="btn btn-primary btn-sm mb-3">
+		Add Employee
+	</a>
+	
+	
+	<table class="table table-bordered table-striped">
+		<thead class="thead-dark">
+			<tr>
+				<th>ID</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email</th>
+				<th>Button</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="tempEmployee : ${employees}">
+				
+				<td th:text="${tempEmployee.id}" />
+				<td th:text="${tempEmployee.firstName}" />	
+				<td th:text="${tempEmployee.lastName}" />	
+				<td th:text="${tempEmployee.email}" />	
+				<td><a th:href="@{/employees/findOne/(id=${tempEmployee.id})}" class="btn btn-primary eBtn">Edit</a>
+					<a th:href=" @{/employees/delete/(id=${tempEmployee.id})}" class="btn btn-danger dBtn">Delete</a> 
+				</td>
+				
+			</tr>
+		</tbody>	
+		
+  			
+	</table>
+
+            <ul class="nav nav-pills" >
+	
+			<li class="nav-item" th:each="i : ${#numbers.sequence(0,employees.totalPages-1)}">
+	
+			<a th:href="@{/employees/list/(page=${i})}" th:text="${i}" class="nav-link"
+			
+			th:classappend="${currentPage}==${i}? 'active':''"></a>
+	
+			 </li>
+	
+			</ul>	
+
+</div>	
+
+<div class="myForm">
+	<form th:action="@{/employees/save}"  method="post">
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Update</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       
+          <div class="form-group">
+            <label for="id" class="col-form-label">ID</label>
+            <input type="text" class="form-control" id="id" name="id" value=" " />
+          </div>
+          
+          <div class="form-group">
+            <label for="fisrtName" class="col-form-label">Fist Name</label>
+            <input type="text" class="form-control" id="firstName" name="firstName" value=" " />
+          </div>
+          
+          <div class="form-group">
+            <label for="lastName" class="col-form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastName" name="lastName" value=" " />
+          </div>
+          
+          <div class="form-group">
+            <label for="email" class="col-form-label">Email</label>
+            <input type="text" class="form-control" id="email" name="email" value=" " />
+          </div>
+          
+          
+     
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <input type="submit" class="btn btn-primary" value="save" />
+      </div>
+    </div>
+  </div>
+</div>
+
+</form>
+</div>
+</div>	
+
+
+<div class="myform">
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Alert!!!!!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="alert alert-danger">Are you sure you want to delete</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <a href=" " class="btn btn-danger" id="delRef">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+	
+	
+	<div class="carousel-item">
+   <img th:src="@{/images/slider-3.jpg}" class="d-block w-100"  alt="..."> 
+    </div>
+	
+</body>
+</html>
+
+
+
