@@ -2,6 +2,8 @@ package com.pharma.demo.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CompanyRepository extends JpaRepository<T, ID> {
+import com.pharma.demo.entity.Company;
+
+public interface CompanyRepository extends JpaRepository<Company, String> {
 
 }

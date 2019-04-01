@@ -2,6 +2,8 @@ package com.pharma.demo.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface MedicineRepository extends JpaRepository<T, ID> {
+import com.pharma.demo.entity.Medicine;
+
+public interface MedicineRepository extends JpaRepository<Medicine, String> {
 
 }

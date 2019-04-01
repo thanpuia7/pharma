@@ -1,7 +1,9 @@
-k/package com.pharma.demo.repository;
+package com.pharma.demo.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface StockRepository extends JpaRepository<T, ID> {
+import com.pharma.demo.entity.Stock;
+
+public interface StockRepository extends JpaRepository<Stock, String> {
 
 }
