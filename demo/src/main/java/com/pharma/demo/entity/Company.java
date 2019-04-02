@@ -18,13 +18,12 @@ public class Company {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@NotEmpty(message="Name field should not be empty")
 	@Column(name="id")
 	private String id;
 	
 	@NotEmpty(message="Title field should not be empty")
 	@Column(name="title")
-	private String name;
+	private String title;
 	
 	
 	@Column(name="email")
@@ -48,12 +47,12 @@ public class Company {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setName(String title) {
+		this.title = title;
 	}
 
 	public String getEmail() {
@@ -89,21 +88,21 @@ public class Company {
 	}
 
 	public Company(@NotEmpty(message = "Name field should not be empty") String id,
-			@NotEmpty(message = "Name field should not be empty") String name, String email, String contact_person,
+			@NotEmpty(message = "Name field should not be empty") String title, String email, String contact_person,
 			String phone, String address) {
 	
 		this.id = id;
-		this.name = name;
+		this.title = title;
 		this.email = email;
 		this.contact_person = contact_person;
 		this.phone = phone;
 		this.address = address;
 	}
 
-	public Company(@NotEmpty(message = "Name field should not be empty") String name, String email,
+	public Company(@NotEmpty(message = "Name field should not be empty") String title, String email,
 			String contact_person, String phone, String address) {
 		
-		this.name = name;
+		this.title = title;
 		this.email = email;
 		this.contact_person = contact_person;
 		this.phone = phone;
@@ -116,7 +115,7 @@ public class Company {
 
 	@Override
 	public String toString() {
-		return "Company [id=" + id + ", name=" + name + ", email=" + email + ", contact_person=" + contact_person
+		return "Company [id=" + id + ", title=" + title + ", email=" + email + ", contact_person=" + contact_person
 				+ ", phone=" + phone + ", address=" + address + "]";
 	}
 	

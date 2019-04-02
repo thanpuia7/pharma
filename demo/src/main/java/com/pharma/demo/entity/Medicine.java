@@ -2,7 +2,9 @@ package com.pharma.demo.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
@@ -12,7 +14,11 @@ import javax.validation.constraints.NotEmpty;
 @Table(name="medicine")
 public class Medicine {
 
-
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@NotEmpty(message="Name field should not be empty")
+	@Column(name="id")
+	private String id;
 	
 	@NotEmpty(message="Title field should not be empty")
 	@Column(name="name")
