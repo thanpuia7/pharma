@@ -18,7 +18,7 @@ public class Customer {
 		@Id
 		@GeneratedValue(strategy=GenerationType.IDENTITY)
 		@Column(name="id")
-		private String id;
+		private Integer id;
 		
 		@NotEmpty(message="Shop field should not be empty")
 		@Column(name="shop")
@@ -38,11 +38,11 @@ public class Customer {
 		@Column(name="address")
 		private String address;
 
-		public String getId() {
+		public Integer getId() {
 			return id;
 		}
 
-		public void setId(String id) {
+		public void setId(Integer id) {
 			this.id = id;
 		}
 
@@ -96,7 +96,7 @@ public class Customer {
 			this.address = address;
 		}
 
-		public Customer(@NotEmpty(message = "Name field should not be empty") String id,
+		public Customer(@NotEmpty(message = "Name field should not be empty") Integer id,
 				@NotEmpty(message = "Shop field should not be empty") String shop, String email, String contact_person,
 				String phone, String address) {
 			

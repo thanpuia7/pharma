@@ -16,23 +16,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.pharma.demo.entity.Company;
-import com.pharma.demo.repository.CompanyRepository;
+
+import com.pharma.demo.entity.Customer;
+
+import com.pharma.demo.repository.CustomerRepository;
 
 
 
 @Controller
-@RequestMapping("/company")
-public class CompanyController {
+@RequestMapping("/customer")
+public class CustomerController {
 	
 	
 	@Autowired
-	private CompanyRepository companyRepository;
+	private CustomerRepository customerRepository;
 	
 	@Autowired
-	public CompanyController(CompanyRepository theCompanyRepository) {
+	public CustomerController(CustomerRepository theCustomerRepository) {
 	 
-		companyRepository=theCompanyRepository;
+		customerRepository=theCustomerRepository;
 	}
 
 	
@@ -44,32 +46,32 @@ public class CompanyController {
 		
 	
 	
-		theModel.addAttribute("companies", companyRepository.findAll(PageRequest.of(page, 4)));
+		theModel.addAttribute("customers", customerRepository.findAll(PageRequest.of(page, 4)));
 		
 		
 		theModel.addAttribute("currentPage", page);
 		
-		return "/form/list-company";
+		return "/form/list-customer";
 	}
 	
 	@GetMapping("/showFormForAdd")
 	public String showFormForAdd(Model theModel) {
 		
 		// create model attribute to bind form data
-		Company theCompany = new Company();
+		Customer theCustomer = new Customer();
 		
-		theModel.addAttribute("companies", theCompany);
+		theModel.addAttribute("customers", theCustomer);
 		
-		return "/form/company-form";
+		return "/form/customer-form";
 	}
 	
 	
 	@PostMapping("/showFormForAdd")		
-	public String showFormValidation(@Valid Company theCompany, BindingResult bindingResult,Model theModel) {
+	public String showFormValidation(@Valid Customer theCustomer, BindingResult bindingResult,Model theModel) {
 	
 	if(bindingResult.hasErrors())
 	{
-		return "/form/company-form";
+		return "/form/customer-form";
 	}
 	
 	
@@ -79,9 +81,9 @@ public class CompanyController {
 //		return "employees/employee-form";
 //	}
 
-	companyRepository.save(theCompany);
+	customerRepository.save(theCustomer);
 	
-	return "redirect:/company/list";
+	return "redirect:/customer/list";
 	
 	}
 	
@@ -90,10 +92,10 @@ public class CompanyController {
 	
 	
 	@PostMapping("/save")
-	public String saveCompany(@ModelAttribute("companies") Company theCompany) {
+	public String saveCompany(@ModelAttribute("customers") Customer theCustomer) {
 		
 		// save the company
-		companyRepository.save(theCompany);
+		customerRepository.save(theCustomer);
 		
 		// use a redirect to prevent duplicate submissions
 		return "redirect:/company/list";
@@ -108,10 +110,10 @@ public class CompanyController {
 
 	@GetMapping("/findOne")
 	@ResponseBody
-	public Optional<Company> findOne(Integer id) {
+	public Optional<Customer> findOne(Integer id) {
 		
 
-		return companyRepository.findById(id);
+		return customerRepository.findById(id);
 				
 	}
 
@@ -120,7 +122,7 @@ public class CompanyController {
 	@GetMapping("/delete")
 	public String delete(Integer id){
 		
-		 companyRepository.deleteById(id);
+		 customerRepository.deleteById(id);
 		 
 		return "redirect:/company/list";
 	}

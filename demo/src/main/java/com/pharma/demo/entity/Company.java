@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
 
@@ -19,13 +20,13 @@ public class Company {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
-	private String id;
+	private Integer id;
 	
 	@NotEmpty(message="Title field should not be empty")
 	@Column(name="title")
 	private String title;
 	
-	
+	@Email(message="Please enter valid email")
 	@Column(name="email")
 	private String email;
 	
@@ -39,11 +40,11 @@ public class Company {
 	@Column(name="address")
 	private String address;
 
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -51,7 +52,7 @@ public class Company {
 		return title;
 	}
 
-	public void setName(String title) {
+	public void setTitle(String title) {
 		this.title = title;
 	}
 
@@ -87,8 +88,8 @@ public class Company {
 		this.address = address;
 	}
 
-	public Company(@NotEmpty(message = "Name field should not be empty") String id,
-			@NotEmpty(message = "Name field should not be empty") String title, String email, String contact_person,
+	public Company(@NotEmpty(message = "Title field should not be empty") Integer id,
+			@NotEmpty(message = "Title field should not be empty") String title, String email, String contact_person,
 			String phone, String address) {
 	
 		this.id = id;
@@ -99,7 +100,7 @@ public class Company {
 		this.address = address;
 	}
 
-	public Company(@NotEmpty(message = "Name field should not be empty") String title, String email,
+	public Company(@NotEmpty(message = "Title field should not be empty") String title, String email,
 			String contact_person, String phone, String address) {
 		
 		this.title = title;

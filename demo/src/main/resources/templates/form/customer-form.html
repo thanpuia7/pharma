@@ -21,20 +21,20 @@
 		
 		
 		
-		<p class="h4 mb-4">Save Company</p>
+		<p class="h4 mb-4">Save Customer</p>
 		
 		
 		
 		
 	
-		<form action="#" th:action="@{/company/showFormForAdd}"
+		<form action="#" th:action="@{/customer/showFormForAdd}"
 						 th:object="${companies}" method="POST">
 		
-			<input type="text" th:field="*{title}"
-					class="form-control mb-4 col-4" placeholder="Company Name">
+			<input type="text" th:field="*{shop}"
+					class="form-control mb-4 col-4" placeholder="Shop Name">
 					
-				<div class="text text-danger" th:if="${#fields.hasErrors('title')}"
-				th:errors="*{title}">
+				<div class="text text-danger" th:if="${#fields.hasErrors('shop')}"
+				th:errors="*{shop}">
 				</div>
 
 
@@ -63,7 +63,7 @@
 	
 		<hr>
 		
-		<a th:href="@{/company/list}" class="btn btn-info col-3">Back to Company List</a>
+		<a th:href="@{/customer/list}" class="btn btn-info col-3">Back to Company List</a>
 		
 	</div>
 	

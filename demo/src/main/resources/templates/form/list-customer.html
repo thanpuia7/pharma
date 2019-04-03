@@ -24,7 +24,7 @@
 <nav class="navbar navbar-default">
 <div class="container">
 <div class="nav-header">
-	<div class="navbar-brand">Company List</div>
+	<div class="navbar-brand">Customer List</div>
 </div>
 	<ul class="nav navbar-nav">
 	<li> <a href="#">Home</a></li>
@@ -36,11 +36,11 @@
 
 <div class="container">
 <div>
-	<h3>Company List</h3>
+	<h3>Customer List</h3>
 	<hr>
 	
 	<!-- Add a button -->
-	<a th:href="@{/company/showFormForAdd}"
+	<a th:href="@{/customer/showFormForAdd}"
 		class="btn btn-primary btn-sm mb-3">
 		Add Company
 	</a>
@@ -49,8 +49,8 @@
 	<table class="table table-bordered table-striped">
 		<thead class="thead-dark">
 			<tr>
-				<th>Company ID</th>
-				<th>Company Title</th>
+				<th>Customer ID</th>
+				<th>Shop Name</th>
 				<th>Email</th>
 				<th>Contact Person</th>
 				<th>Phone</th>
@@ -59,17 +59,17 @@
 		</thead>
 		
 		<tbody>
-			<tr th:each="tempCompany: ${companies}">
+			<tr th:each="tempCustomer: ${customers}">
 				
-				<td th:text="${tempCompany.id}" />
-				<td th:text="${tempCompany.title}" />	
-				<td th:text="${tempCompany.email}" />	
-				<td th:text="${tempCompany.contact_person}" />
-				<td th:text="${tempCompany.phone}" />
-				<td th:text="${tempCompany.address}" />
+				<td th:text="${tempCustomer.id}" />
+				<td th:text="${tempCustomer.shop}" />	
+				<td th:text="${tempCustomer.email}" />	
+				<td th:text="${tempCustomer.contact_person}" />
+				<td th:text="${tempCustomer.phone}" />
+				<td th:text="${tempCustomer.address}" />
 					
-				<td><a th:href="@{/company/findOne/(id=${tempCompany.id})}" class="btn btn-primary eBtn">Edit</a>
-					<a th:href="@{/company/delete/(id=${tempCompany.id})}" class="btn btn-danger dBtn">Delete</a> 
+				<td><a th:href="@{/customer/findOne/(id=${tempCustomer.id})}" class="btn btn-primary ceBtn">Edit</a>
+					<a th:href="@{/customer/delete/(id=${tempCustomer.id})}" class="btn btn-danger cdBtn">Delete</a> 
 				</td>
 				
 			</tr>
@@ -80,9 +80,9 @@
 
             <ul class="nav nav-pills" >
 	
-			<li class="nav-item" th:each="i : ${#numbers.sequence(0,companies.totalPages-1)}">
+			<li class="nav-item" th:each="i : ${#numbers.sequence(0,customers.totalPages-1)}">
 	
-			<a th:href="@{/company/list/(page=${i})}" th:text="${i}" class="nav-link"
+			<a th:href="@{/customer/list/(page=${i})}" th:text="${i}" class="nav-link"
 			
 			th:classappend="${currentPage}==${i}? 'active':''"></a>
 	
@@ -93,7 +93,7 @@
 </div>	
 
 <div class="myForm">
-	<form th:action="@{/company/showFormForAdd}"  method="post">
+	<form th:action="@{/coustomer/save}"  method="post">
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -108,15 +108,14 @@
        
           <div class="form-group">
             <label for="id" class="col-form-label">ID</label>
-            <input type="text" class="form-control" id="id" name="id" />
+            <input type="text" class="form-control" id="id" name="id" value=" " />
           </div>
           
           <div class="form-group">
             <label for="fisrtName" class="col-form-label">Title</label>
             <input type="text" class="form-control" id="title" name="title" value=" " />
           </div>
-				
-				
+          
           <div class="form-group">
             <label for="lastName" class="col-form-label">Email</label>
             <input type="text" class="form-control" id="email" name="email" value=" " />
