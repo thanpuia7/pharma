@@ -71,4 +71,50 @@ $('.table .ceBtn').on('click',function(event){
 		$('#myModal').modal();
 	});
 	
+	
+	
+	
+	
+	
+	
+	/* medicine */
+	
+$('.table .meBtn').on('click',function(event){
+		
+		event.preventDefault();
+		var href = $(this).attr('href');
+		
+		$.get(href,function(tempMedicine,status){
+			
+			
+			$('.myForm #id').val(tempMedicine.id);
+			$('.myForm #name').val(tempMedicine.name);
+			$('.myForm #packing').val(tempMedicine.packing);
+			$('.myForm #packagee').val(tempMedicine.packagee);
+			$('.myForm #company').val(tempMedicine.company);
+			$('.myForm #manufacturer').val(tempMedicine.manufacturer);
+			$('.myForm #HSNCode').val(tempMedicine.HSNCode);
+			$('.myForm #HSNValue').val(tempMedicine.HSNValue);
+			
+		});
+		
+		
+		$('.myForm #exampleModal').modal();
+	});
+	
+	
+	
+	$('.table .mdBtn').on('click',function(event){
+		event.preventDefault();
+		var href = $(this).attr('href');
+		
+		$('#myModal #delRef').attr('href',href);
+		$('#myModal').modal();
+	});
+	
+	
+	
+
+	
+	
 	});

@@ -9,14 +9,14 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" th:integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" th:crossorigin="anonymous">
 
-	<title>Save Employee</title>
+	<title>Save Customer</title>
 </head>
 
 <body>
 
 	<div class="container">
 	
-		<h3>Company List</h3>
+		<h3>Customer</h3>
 		<hr>
 		
 		
@@ -28,7 +28,7 @@
 		
 	
 		<form action="#" th:action="@{/customer/showFormForAdd}"
-						 th:object="${companies}" method="POST">
+						 th:object="${customers}" method="POST">
 		
 			<input type="text" th:field="*{shop}"
 					class="form-control mb-4 col-4" placeholder="Shop Name">
@@ -63,7 +63,7 @@
 	
 		<hr>
 		
-		<a th:href="@{/customer/list}" class="btn btn-info col-3">Back to Company List</a>
+		<a th:href="@{/customer/list}" class="btn btn-info col-3">Back to Customer List</a>
 		
 	</div>
 	

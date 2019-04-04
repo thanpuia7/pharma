@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" th:integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" th:crossorigin="anonymous">
+
+	<title>Save Customer</title>
+</head>
+
+<body>
+
+	<div class="container">
+	
+		<h3>Customer</h3>
+		<hr>
+		
+		
+		
+		<p class="h4 mb-4">Save Customer</p>
+		
+		
+		
+		
+	
+		<form action="#" th:action="@{/medicine/showFormForAdd}"
+						 th:object="${medicines}" method="POST">
+		
+			<input type="text" th:field="*{name}"
+					class="form-control mb-4 col-4" placeholder="Medicine Name">
+					
+				<div class="text text-danger" th:if="${#fields.hasErrors('name')}"
+				th:errors="*{name}">
+				</div>
+
+
+			<input type="text" th:field="*{packing}"
+					class="form-control mb-4 col-4" placeholder="Packing">
+			
+				
+				
+
+			<input type="text" th:field="*{packagee}"
+					class="form-control mb-4 col-4" placeholder="Package">
+					
+					
+			<input type="text" th:field="*{company}"
+					class="form-control mb-4 col-4" placeholder="Company">
+					
+					
+			<input type="text" th:field="*{manufacturer}"
+					class="form-control mb-4 col-4" placeholder="Manufacturer">
+					
+			<input type="text" th:field="*{HSNCode}"
+					class="form-control mb-4 col-4" placeholder="HSNCode">
+					
+			<input type="text" th:field="*{HSNValue}"
+					class="form-control mb-4 col-4" placeholder="HSNValue">
+					
+				
+			<button type="submit" class="btn btn-info col-2">Save</button>
+						
+		</form>
+	
+		<hr>
+		
+		<a th:href="@{/medicine/list}" class="btn btn-info col-3">Back to Medicine List</a>
+		
+	</div>
+	
+	<hr/>
+	
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+

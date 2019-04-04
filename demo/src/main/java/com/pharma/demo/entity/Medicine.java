@@ -16,11 +16,10 @@ public class Medicine {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@NotEmpty(message="Name field should not be empty")
 	@Column(name="id")
-	private String id;
+	private Integer id;
 	
-	@NotEmpty(message="Title field should not be empty")
+	@NotEmpty(message="Name field should not be empty")
 	@Column(name="name")
 	private String name;
 	
@@ -44,6 +43,16 @@ public class Medicine {
 	@Column(name="HSNValue")
 	private String HSNValue;
 
+	
+	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -104,7 +113,13 @@ public class Medicine {
 		
 	}
 
-	public Medicine(@NotEmpty(message = "Title field should not be empty") String name, String packing, String packagee,
+	
+	
+	
+	
+	
+	
+	public Medicine(@NotEmpty(message = "Name field should not be empty") String name, String packing, String packagee,
 			String company, String manufacturer, String hSNCode, String hSNValue) {
 		
 		this.name = name;
@@ -116,12 +131,33 @@ public class Medicine {
 		HSNValue = hSNValue;
 	}
 
+	
+	
+	
+	
+	
+	
+	public Medicine(Integer id, @NotEmpty(message = "Name field should not be empty") String name, String packing,
+			String packagee, String company, String manufacturer, String hSNCode, String hSNValue) {
+	
+		this.id = id;
+		this.name = name;
+		this.packing = packing;
+		this.packagee = packagee;
+		this.company = company;
+		this.manufacturer = manufacturer;
+		HSNCode = hSNCode;
+		HSNValue = hSNValue;
+	}
+
 	@Override
 	public String toString() {
-		return "Medicine [name=" + name + ", packing=" + packing + ", packagee=" + packagee + ", company=" + company
-				+ ", manufacturer=" + manufacturer + ", HSNCode=" + HSNCode + ", HSNValue=" + HSNValue + "]";
+		return "Medicine [id=" + id + ", name=" + name + ", packing=" + packing + ", packagee=" + packagee
+				+ ", company=" + company + ", manufacturer=" + manufacturer + ", HSNCode=" + HSNCode + ", HSNValue="
+				+ HSNValue + "]";
 	}
-	
+
+
 	
 	
 	

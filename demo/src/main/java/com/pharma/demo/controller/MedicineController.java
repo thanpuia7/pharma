@@ -16,25 +16,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
-import com.pharma.demo.entity.Customer;
-
-import com.pharma.demo.repository.CustomerRepository;
+import com.pharma.demo.entity.Medicine;
+import com.pharma.demo.repository.MedicineRepository;
 
 
 
 @Controller
-@RequestMapping("/customer")
-public class CustomerController {
+@RequestMapping("/medicine")
+public class MedicineController {
 	
 	
 	@Autowired
-	private CustomerRepository customerRepository;
+	private MedicineRepository medicineRepository;
 	
 	@Autowired
-	public CustomerController(CustomerRepository theCustomerRepository) {
+	public MedicineController(MedicineRepository theMedicineRepository) {
 	 
-		customerRepository=theCustomerRepository;
+		medicineRepository=theMedicineRepository;
 	}
 
 	
@@ -46,32 +44,32 @@ public class CustomerController {
 		
 	
 	
-		theModel.addAttribute("customers", customerRepository.findAll(PageRequest.of(page, 4)));
+		theModel.addAttribute("medicines", medicineRepository.findAll(PageRequest.of(page, 4)));
 		
 		
 		theModel.addAttribute("currentPage", page);
 		
-		return "/form/list-customer";
+		return "/form/list-medicine";
 	}
 	
 	@GetMapping("/showFormForAdd")
 	public String showFormForAdd(Model theModel) {
 		
 		// create model attribute to bind form data
-		Customer theCustomer = new Customer();
+		Medicine theMedicine = new Medicine();
 		
-	theModel.addAttribute("customers", theCustomer);
+		theModel.addAttribute("medicines", theMedicine);
 		
-		return "/form/customer-form";
+		return "/form/medicine-form";
 	}
 	
 	
 	@PostMapping("/showFormForAdd")		
-	public String showFormValidation(@Valid Customer theCustomer, BindingResult bindingResult,Model theModel) {
+	public String showFormValidation(@Valid Medicine theMedicine, BindingResult bindingResult,Model theModel) {
 	
 	if(bindingResult.hasErrors())
 	{
-		return "/form/customer-form";
+		return "/form/medicine-form";
 	}
 	
 	
@@ -81,9 +79,9 @@ public class CustomerController {
 //		return "employees/employee-form";
 //	}
 
-	customerRepository.save(theCustomer);
+	medicineRepository.save(theMedicine);
 	
-	return "redirect:/customer/list";
+	return "redirect:/medicine/list";
 	
 	}
 	
@@ -92,13 +90,13 @@ public class CustomerController {
 	
 	
 	@PostMapping("/save")
-	public String saveCompany(@ModelAttribute("customers") Customer theCustomer) {
+	public String saveMedicine(@ModelAttribute("medicines") Medicine theMedicine) {
 		
 		// save the company
-		customerRepository.save(theCustomer);
+		medicineRepository.save(theMedicine);
 		
 		// use a redirect to prevent duplicate submissions
-		return "redirect:/customer/list";
+		return "redirect:/medicine/list";
 	}
 	
 	
@@ -110,10 +108,10 @@ public class CustomerController {
 
 	@GetMapping("/findOne")
 	@ResponseBody
-	public Optional<Customer> findOne(Integer id) {
+	public Optional<Medicine> findOne(Integer id) {
 		
 
-		return customerRepository.findById(id);
+		return medicineRepository.findById(id);
 				
 	}
 
@@ -122,9 +120,9 @@ public class CustomerController {
 	@GetMapping("/delete")
 	public String delete(Integer id){
 		
-		 customerRepository.deleteById(id);
+		 medicineRepository.deleteById(id);
 		 
-		return "redirect:/customer/list";
+		return "redirect:/medicine/list";
 	}
 	
 }

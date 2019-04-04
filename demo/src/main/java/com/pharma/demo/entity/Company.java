@@ -88,11 +88,10 @@ public class Company {
 		this.address = address;
 	}
 
-	public Company(@NotEmpty(message = "Title field should not be empty") Integer id,
-			@NotEmpty(message = "Title field should not be empty") String title, String email, String contact_person,
-			String phone, String address) {
+	public Company(@NotEmpty(message = "Title field should not be empty") String title,
+			@Email(message = "Please enter valid email") String email, String contact_person, String phone,
+			String address) {
 	
-		this.id = id;
 		this.title = title;
 		this.email = email;
 		this.contact_person = contact_person;
@@ -100,9 +99,15 @@ public class Company {
 		this.address = address;
 	}
 
-	public Company(@NotEmpty(message = "Title field should not be empty") String title, String email,
-			String contact_person, String phone, String address) {
-		
+	
+	
+	
+	
+	public Company(Integer id, @NotEmpty(message = "Title field should not be empty") String title,
+			@Email(message = "Please enter valid email") String email, String contact_person, String phone,
+			String address) {
+	
+		this.id = id;
 		this.title = title;
 		this.email = email;
 		this.contact_person = contact_person;

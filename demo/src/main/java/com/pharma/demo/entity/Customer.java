@@ -46,11 +46,11 @@ public class Customer {
 			this.id = id;
 		}
 
-		public String getTitle() {
+		public String getShop() {
 			return shop;
 		}
 
-		public void setTitle(String shop) {
+		public void setShop(String shop) {
 			this.shop = shop;
 		}
 
