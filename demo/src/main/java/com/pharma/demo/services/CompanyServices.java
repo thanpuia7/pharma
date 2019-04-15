@@ -23,4 +23,10 @@ public class CompanyServices {
 		return companyRepository.findAll();
 	}
 	
+	
+	public List<Company> findByTitle(String title) {
+		// TODO Auto-generated method stub
+		return  companyRepository.findByTitleLike("%"+title+"%");
+	}
+	
 }

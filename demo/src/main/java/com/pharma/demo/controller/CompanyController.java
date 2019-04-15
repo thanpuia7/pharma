@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.pharma.demo.entity.Company;
 import com.pharma.demo.repository.CompanyRepository;
+import com.pharma.demo.services.CompanyServices;
 
 
 
@@ -28,6 +29,11 @@ public class CompanyController {
 	
 	@Autowired
 	private CompanyRepository companyRepository;
+
+	
+	private CompanyServices companyService;
+	
+	
 	
 	@Autowired
 	public CompanyController(CompanyRepository theCompanyRepository) {
@@ -124,6 +130,14 @@ public class CompanyController {
 		 
 		return "redirect:/company/list";
 	}
+	
+	@GetMapping("/search")
+	public String listCompany(Model model, @RequestParam(defaultValue="")  String title) {
+		model.addAttribute("test", companyService.findByTitle(title));
+		
+		return "/form/company-search";
+	}
+	
 	
 }
 	
