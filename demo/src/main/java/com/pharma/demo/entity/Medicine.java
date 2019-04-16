@@ -97,16 +97,16 @@ public class Medicine {
 		return HSNCode;
 	}
 
-	public void setHSNCode(String hSNCode) {
-		HSNCode = hSNCode;
+	public void setHSNCode(String HSNCode) {
+		this.HSNCode = HSNCode;
 	}
 
 	public String getHSNValue() {
 		return HSNValue;
 	}
 
-	public void setHSNValue(String hSNValue) {
-		HSNValue = hSNValue;
+	public void setHSNValue(String HSNValue) {
+		this.HSNValue = HSNValue;
 	}
 
 	public Medicine() {
@@ -120,15 +120,15 @@ public class Medicine {
 	
 	
 	public Medicine(@NotEmpty(message = "Name field should not be empty") String name, String packing, String packagee,
-			String company, String manufacturer, String hSNCode, String hSNValue) {
+			String company, String manufacturer, String HSNCode, String HSNValue) {
 		
 		this.name = name;
 		this.packing = packing;
 		this.packagee = packagee;
 		this.company = company;
 		this.manufacturer = manufacturer;
-		HSNCode = hSNCode;
-		HSNValue = hSNValue;
+		this.HSNCode = HSNCode;
+		this.HSNValue = HSNValue;
 	}
 
 	
@@ -138,7 +138,7 @@ public class Medicine {
 	
 	
 	public Medicine(Integer id, @NotEmpty(message = "Name field should not be empty") String name, String packing,
-			String packagee, String company, String manufacturer, String hSNCode, String hSNValue) {
+			String packagee, String company, String manufacturer, String HSNCode, String HSNValue) {
 	
 		this.id = id;
 		this.name = name;
@@ -146,8 +146,8 @@ public class Medicine {
 		this.packagee = packagee;
 		this.company = company;
 		this.manufacturer = manufacturer;
-		HSNCode = hSNCode;
-		HSNValue = hSNValue;
+		this.HSNCode = HSNCode;
+		this.HSNValue = HSNValue;
 	}
 
 	@Override

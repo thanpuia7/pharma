@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+   <!-- Bootstrap -->
+	
+ <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+     <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    <script th:src="@{/js/jquery.js}"></script>
+    <script th:src="@{/js/bootstrap.js}"></script>
+    <script type="text/javascript" th:src="@{/js/main.js}"  src="/js/main.js"></script>
+    
+	<title>Pharmacy</title>
+</head>
+
+<body>
+
+
+<nav class="navbar navbar-default">
+<div class="container">
+<div class="nav-header">
+	<div class="navbar-brand">Company List</div>
+</div>
+	<ul class="nav navbar-nav">
+	<li> <a href="#">Home</a></li>
+	<li><a href=" ">About</a></li>
+	<li><a href=" ">FAQ </a></li>
+	</ul>
+</div>
+	</nav>
+
+<div class="container">
+<div>
+	<h3>Customer List</h3>
+	<hr>
+	
+	<!-- Add a button -->
+	<a th:href="@{/customer/showFormForAdd}"
+		class="btn btn-primary btn-sm mb-3">
+		Add Company
+	</a>
+	
+	<div>
+	 <form th:action="@{/customer/search}" class="form-inline">
+	        <div class="form-group mb-2">
+	         <input type="text" class="form-control" name="title" placeholder="Search Company" />
+	         <input type="submit" value="Search"  class="btn btn-primary"/>
+	        </div>
+	     </form>
+	</div>
+	
+	<table class="table table-bordered table-striped">
+		<thead class="thead-dark">
+			<tr>
+				<th>Company ID</th>
+				<th>Company Title</th>
+				<th>Email</th>
+				<th>Contact Person</th>
+				<th>Phone</th>
+				<th>Address</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="tempCus: ${test}">
+				
+				<td th:text="${tempCus.id}" />
+				<td th:text="${tempCus.shop}" />	
+				<td th:text="${tempCus.email}" />	
+				<td th:text="${tempCus.contact_person}" />
+				<td th:text="${tempCus.phone}" />
+				<td th:text="${tempCus.address}" />
+					
+			
+				
+			</tr>
+		</tbody>	
+		
+  			
+	</table>
+
+</div>	
+
+
+
+<a th:href="@{/index}" class="btn btn-info col-3">Back to Home</a>
+
+
+</div>
+
+	
+
+	
+</body>
+</html>
+
+
+

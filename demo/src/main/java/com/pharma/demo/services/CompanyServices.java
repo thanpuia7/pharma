@@ -4,10 +4,12 @@ import java.util.List;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.pharma.demo.entity.Company;
 import com.pharma.demo.repository.CompanyRepository;
 
+@Service
 public class CompanyServices {
 
 	

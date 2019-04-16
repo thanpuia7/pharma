@@ -26,12 +26,12 @@ import com.pharma.demo.services.CompanyServices;
 @RequestMapping("/company")
 public class CompanyController {
 	
-	
+	@Autowired
+	private CompanyServices companyService;
 	@Autowired
 	private CompanyRepository companyRepository;
 
 	
-	private CompanyServices companyService;
 	
 	
 	
@@ -114,7 +114,7 @@ public class CompanyController {
 
 	@GetMapping("/findOne")
 	@ResponseBody
-	public Optional<Company> findOne(Integer id) {
+	public Optional<Company> findOne(String id) {
 		
 
 		return companyRepository.findById(id);
@@ -124,7 +124,7 @@ public class CompanyController {
 	
 	
 	@GetMapping("/delete")
-	public String delete(Integer id){
+	public String delete(String id){
 		
 		 companyRepository.deleteById(id);
 		 
@@ -132,10 +132,12 @@ public class CompanyController {
 	}
 	
 	@GetMapping("/search")
-	public String listCompany(Model model, @RequestParam(defaultValue="")  String title) {
-		model.addAttribute("test", companyService.findByTitle(title));
+	public String companySearch(Model themodel, @RequestParam(defaultValue="")  String title) {
 		
-		return "/form/company-search";
+		
+		themodel.addAttribute("test",companyService.findByTitle(title));
+		
+		return "form/company-search";
 	}
 	
 	

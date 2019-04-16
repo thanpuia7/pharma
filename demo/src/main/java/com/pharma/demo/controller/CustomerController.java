@@ -21,12 +21,17 @@ import com.pharma.demo.entity.Customer;
 
 import com.pharma.demo.repository.CustomerRepository;
 
+import com.pharma.demo.services.CustomerService;
+
 
 
 @Controller
 @RequestMapping("/customer")
 public class CustomerController {
 	
+	
+	@Autowired
+	private CustomerService customerService;
 	
 	@Autowired
 	private CustomerRepository customerRepository;
@@ -126,6 +131,16 @@ public class CustomerController {
 		 
 		return "redirect:/customer/list";
 	}
+	
+	@GetMapping("/search")
+	public String customerSearch(Model themodel, @RequestParam(defaultValue="")  String shop) {
+		
+		
+		themodel.addAttribute("test",customerService.findByShop(shop));
+		
+		return "form/customer-search";
+	}
+	
 	
 }
 	

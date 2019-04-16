@@ -20,7 +20,7 @@ public class Company {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
-	private Integer id;
+	private String id;
 	
 	@NotEmpty(message="Title field should not be empty")
 	@Column(name="title")
@@ -40,11 +40,11 @@ public class Company {
 	@Column(name="address")
 	private String address;
 
-	public Integer getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -103,7 +103,7 @@ public class Company {
 	
 	
 	
-	public Company(Integer id, @NotEmpty(message = "Title field should not be empty") String title,
+	public Company(String id, @NotEmpty(message = "Title field should not be empty") String title,
 			@Email(message = "Please enter valid email") String email, String contact_person, String phone,
 			String address) {
 	

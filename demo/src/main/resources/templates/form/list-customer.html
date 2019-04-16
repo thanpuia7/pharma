@@ -39,6 +39,17 @@
 	<h3>Customer List</h3>
 	<hr>
 	
+	
+	<div>
+	 <form th:action="@{/customer/search}" class="form-inline">
+	        <div class="form-group mb-2">
+	         <input type="text" class="form-control" name="shop" placeholder="Search Customer" />
+	         <input type="submit" value="Search"  class="btn btn-primary"/>
+	        </div>
+	     </form>
+	</div>
+	
+	
 	<!-- Add a button -->
 	<a th:href="@{/customer/showFormForAdd}"
 		class="btn btn-primary btn-sm mb-3">
