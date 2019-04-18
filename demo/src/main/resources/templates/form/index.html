@@ -9,33 +9,150 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
-    
-     <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/css/css/font-awesome.min.css}">
     <script th:src="@{/js/jquery.js}"></script>
     <script th:src="@{/js/bootstrap.js}"></script>
     <script type="text/javascript" th:src="@{/js/main.js}"  src="/js/main.js"></script>
     
-    
     </head>
     <body>
+    <div class="container">
+    <div class="nav1" >
     
     
-   <a th:href="@{/company/list}"
-		class="btn btn-primary btn-sm mb-3">
-		Company
-	</a>
+    <div class="navbar-header">
+	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarSupportedContent">
+	<i class="fa fa-bars"></i>
+	
+	</button>
+</div>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="nav navbar-nav">
+      <li class="active">
+        <a class="nav-link" href="#">Home </a>
+      </li>
+      <li>
+        <a class="nav-link" href="#about">About</a>
+      </li>
+      <li>
+        <a class="nav-link" href="#services">Services</a>
+      </li>
+      <li> 
+        <a class="nav-link" href="#gallery">Gallery</a>
+      </li>
+      <li>
+        <a class="nav-link" href="#contact">Contact</a>
+      </li>
+     
+    </ul>
+   
+  </div>
+
+</div>
+
+  </div>  
+ 
     
      
-   <a th:href="@{/customer/list}"
-		class="btn btn-primary btn-sm mb-3">
-		Customer
-	</a>
+   
 	
 	
-	<a th:href="@{/medicine/list}"
+	
+    
+    
+    
+    <div class="container" id="about">
+	<div class="about">
+		<h1>Goldy Drug Store</h1>
+		<h3> What we are</h3>
+		<p>This platform is for citizen who wants to pay , book submit any related documents online to save money for transportation and above all their precious time</p>
+		
+		<div class="row">
+		
+			<div class="col-md-4 crl1 about_grid">
+				<i class="fa fa-building-o fa-2x"></i>
+				<h4>Company</h4>
+				<p>A programmer is an individual that writes/creates computer software or applications by giving the computer specific programming instru... </p>
+				
+				
+				 <a  th:href="@{/company/list}" class="btn btn-primary btn-sm mb-3">
+		           View
+	              </a>
+				
+			</div>
+			
+			<div class="col-md-4 crl2 about_grid">
+				<i class="fa fa-thermometer-full"></i>
+				<h4>Medicine</h4>
+				<p>The Department of Information and Communication Technology was, in its nascent stage, functioning under the Department of Industry..</p>
+				
+				<a th:href="@{/customer/list}"
 		class="btn btn-primary btn-sm mb-3">
-		Medicine
-	</a>
+		View </a>
+			</div>
+			
+			
+			<div class="col-md-4 crl3 about_grid">
+				<i class="fa fa-user fa-2x"></i>
+				<h4>Customer</h4>
+				<p>A programmer is an individual that writes/creates computer software or applications by giving the computer specific programming instru... </p>
+				<a th:href="@{/medicine/list}" class="btn btn-primary btn-sm mb-3">
+		 View </a>
+		 
+		 
+		 
+			</div>
+			
+			
+			<hr>
+			
+			
+			
+			
+			<div class="col-md-4 crl4 about_grid">
+				<i class="fa fa-shopping-cart fa-2x"></i>
+				<h4>Purchase</h4>
+				<p>A programmer is an individual that writes/creates computer software or applications by giving the computer specific programming instru... </p>
+				
+				
+				 <a  th:href="@{/company/list}" class="btn btn-primary btn-sm mb-3">
+		           View
+	              </a>
+				
+			</div>
+			
+			<div class="col-md-4 crl5 about_grid">
+				<i class="fa fa-shopping-basket"></i>
+				<h4>Sales</h4>
+				<p>The Department of Information and Communication Technology was, in its nascent stage, functioning under the Department of Industry..</p>
+				
+				<a th:href="@{/customer/list}"
+		class="btn btn-primary btn-sm mb-3">
+		View </a>
+			</div>
+			
+			
+			<div class="col-md-4 crl4 about_grid">
+				<i class="fa fa-truck fa-2x"></i>
+				<h4>Stock</h4>
+				<p>A programmer is an individual that writes/creates computer software or applications by giving the computer specific programming instru... </p>
+				<a th:href="@{/medicine/list}" class="btn btn-primary btn-sm mb-3">
+		 View </a>
+		 
+		 
+		 
+			</div>
+			
+			
+		</div>
+		
+		
+	</div>
+
+</div>
     
     
     
@@ -46,3 +163,4 @@
     
     
     </body>
+    </html>
